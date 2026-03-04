@@ -23,13 +23,14 @@
 
     h1 {
       font-size: 0.9rem;
-      font-weight: normal;
-      color: #a09880;
+      font-weight: 600;
+      color: #2c2a25;
     }
 
-    h1 span {
-      color: #2c2a25;
-      font-weight: 600;
+    footer {
+      margin-top: 3rem;
+      font-size: 0.75rem;
+      color: #c0b8a8;
     }
 
     #list { list-style: none; }
@@ -79,10 +80,11 @@
 </head>
 <body>
   <header>
-    <h1>~ / <span>artifacts/</span></h1>
+    <h1>Ido's artifacts</h1>
   </header>
 
   <ul id="list"></ul>
+  <footer>made in collaboration with <a href="https://claude.ai" style="color:inherit">claude</a></footer>
 
   <script>
     const list = document.getElementById('list');
