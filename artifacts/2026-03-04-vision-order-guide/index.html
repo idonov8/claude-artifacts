@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ido's Vision Order Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap');
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --card-hover: #222633;
+    --accent: #4f8cff;
+    --accent-dim: #2d4a7a;
+    --green: #34d399;
+    --orange: #fb923c;
+    --text: #e2e4ea;
+    --text-dim: #8b8fa3;
+    --border: #2a2e3d;
+    --red: #f87171;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px;
+    line-height: 1.6;
+  }
+  .container { max-width: 780px; margin: 0 auto; }
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #fff;
+  }
+  .subtitle {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+  }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .card .tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  .tag-blue { background: var(--accent-dim); color: var(--accent); }
+  .tag-green { background: #1a3a2a; color: var(--green); }
+  .tag-orange { background: #3a2a1a; color: var(--orange); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.88rem;
+  }
+  th {
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+  }
+  tr:last-child td { border-bottom: none; }
+  .eye-label {
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.15s;
+  }
+  .links a:hover {
+    border-color: var(--accent);
+    background: #141722;
+  }
+  .links .price {
+    font-family: 'DM Mono', monospace;
+    color: var(--green);
+    font-weight: 500;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+  .links .shop-name {
+    font-weight: 500;
+  }
+  .links .arrow { color: var(--text-dim); margin-left: 8px; }
+
+  .note {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    background: #161824;
+    border-left: 3px solid var(--accent);
+    padding: 12px 14px;
+    border-radius: 0 8px 8px 0;
+    margin: 14px 0;
+    line-height: 1.55;
+  }
+  .note strong { color: var(--text); }
+  .note.warn {
+    border-left-color: var(--orange);
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+  }
+
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent-dim);
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+    font-size: 0.88rem;
+  }
+  .steps > div {
+    display: flex;
+    align-items: flex-start;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>🔗 Ido's Vision Order Guide</h1>
+  <p class="subtitle">Your prescription values + direct links for contact lenses and glasses reglazing</p>
+
+  <!-- ═══════════ PRESCRIPTION ═══════════ -->
+
+  <div class="section-label">Your Prescription (from Apollo, 27.08.2025)</div>
+
+  <div class="card">
+    <h3>Contact Lens Values</h3>
+    <span class="tag tag-blue">iWear Balance Plus Astig = Biofinity Toric</span>
+    <table>
+      <tr><th></th><th>Power</th><th>Cyl</th><th>Axis</th><th>BC</th><th>Dia</th></tr>
+      <tr><td class="eye-label">👁 Right</td><td>-1.25</td><td>-0.75</td><td>130°</td><td>8.7*</td><td>14.5</td></tr>
+      <tr><td class="eye-label">👁 Left</td><td>-0.50</td><td>-0.75</td><td>40°</td><td>8.7*</td><td>14.5</td></tr>
+    </table>
+    <div class="note">
+      <strong>* Note on BC:</strong> Your Apollo receipt shows BC 8.50 (your eye measurement). The actual Biofinity Toric lens only comes in BC 8.7 — that's what you select when ordering.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Glasses Values (for reglazing)</h3>
+    <span class="tag tag-blue">Same Sph/Cyl/Axis — but you need PD from your optician</span>
+    <table>
+      <tr><th></th><th>Sph</th><th>Cyl</th><th>Axis</th></tr>
+      <tr><td class="eye-label">👁 Right</td><td>-1.25</td><td>-0.75</td><td>130°</td></tr>
+      <tr><td class="eye-label">👁 Left</td><td>-0.50</td><td>-0.75</td><td>40°</td></tr>
+    </table>
+    <div class="note warn">
+      <strong>⚠ Important:</strong> Contact lens values ≠ glasses values in all cases. Your prescription is mild enough that the values are likely the same, but ask Apollo for your glasses prescription + PD (pupil distance) before ordering. Or let Eyeglass24 read the values from your current glasses.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════ CONTACT LENSES ═══════════ -->
+
+  <div class="section-label">Contact Lenses — Order Links</div>
+
+  <div class="card">
+    <h3>Option 1: Biofinity Toric (6-pack)</h3>
+    <span class="tag tag-green">Extended wear up to 6 nights · Same lens you already use</span>
+    <p style="font-size:0.85rem;color:var(--text-dim);margin-bottom:4px;">You need <strong style="color:#fff">2 boxes</strong> (1 per eye = 6 months total supply)</p>
+
+    <div class="links">
+      <a href="https://www.linsenplatz.de/biofinity-toric-6er-box--lbi6t" target="_blank">
+        <span><span class="shop-name">Linsenplatz.de</span> — good configurator</span>
+        <span><span class="price">~€28/box</span> <span class="arrow">→</span></span>
+      </a>
+      <a href="https://www.lentiamo.de/biofinity-toric-6-pack.html" target="_blank">
+        <span><span class="shop-name">Lentiamo.de</span> — popular, fast delivery</span>
+        <span><span class="price">~€28/box</span> <span class="arrow">→</span></span>
+      </a>
+      <a href="https://www.fielmann.de/p/biofinity-toric-6-98/" target="_blank">
+        <span><span class="shop-name">Fielmann.de</span> — trusted chain</span>
+        <span><span class="price">~€28/box</span> <span class="arrow">→</span></span>
+      </a>
+      <a href="https://www.123optic.com/de/biofinity-toric-6-linsen/" target="_blank">
+        <span><span class="shop-name">123Optic.com</span> — often cheapest</span>
+        <span><span class="price">check price</span> <span class="arrow">→</span></span>
+      </a>
+    </div>
+
+    <div class="note">
+      <strong>What to enter:</strong> Right eye: PWR -1.25 / CYL -0.75 / AX 130 / BC 8.7<br>
+      Left eye: PWR -0.50 / CYL -0.75 / AX 40 / BC 8.7<br>
+      Order 1 box per eye → add to cart twice with different values.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Option 2: PureVision 2 HD for Astigmatism (6-pack)</h3>
+    <span class="tag tag-orange">Extended wear up to 30 nights · Different BC — ask optician first</span>
+    <p style="font-size:0.85rem;color:var(--text-dim);margin-bottom:4px;">You need <strong style="color:#fff">2 boxes</strong> · BC for this lens is 8.9 (not 8.7)</p>
+
+    <div class="links">
+      <a href="https://www.kontaktlinsen-preisvergleich.de/purevision-2-hd-for-astigmatism" target="_blank">
+        <span><span class="shop-name">Kontaktlinsen-Preisvergleich</span> — price comparison</span>
+        <span><span class="price">from €26/box</span> <span class="arrow">→</span></span>
+      </a>
+      <a href="https://www.lensbest.de/purevision2-6-pack" target="_blank">
+        <span><span class="shop-name">Lensbest.de</span> — direct order</span>
+        <span><span class="price">~€43/box</span> <span class="arrow">→</span></span>
+      </a>
+      <a href="https://www.123optic.com/en/purevision-2-for-astigmatism/" target="_blank">
+        <span><span class="shop-name">123Optic.com</span></span>
+        <span><span class="price">check price</span> <span class="arrow">→</span></span>
+      </a>
+    </div>
+
+    <div class="note warn">
+      <strong>⚠ Heads up:</strong> This lens has a different base curve (8.9) than your fitted Biofinity (8.7). Ideally get a fitting before switching. Enter: PWR -1.25/-0.50 · CYL -0.75 · AX 130/40 · BC 8.9
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════ GLASSES ═══════════ -->
+
+  <div class="section-label">Glasses Reglazing — Order Links</div>
+
+  <div class="card">
+    <h3>Cheapest: Eyeglass24 (online, mail-in)</h3>
+    <span class="tag tag-green">From €39.90 for both lenses · Free shipping · Scratch resistance included</span>
+
+    <div class="links">
+      <a href="https://eyeglass24.de/pages/brillenglas-konfigurator" target="_blank">
+        <span><span class="shop-name">Eyeglass24 Configurator</span> — start here</span>
+        <span><span class="price">from €39.90</span> <span class="arrow">→</span></span>
+      </a>
+      <a href="https://eyeglass24.de/collections/all" target="_blank">
+        <span><span class="shop-name">Eyeglass24 All Products</span></span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="steps">
+      <div><span class="step-num">1</span> Select "Einstärkenglas" (single vision) → Fernbrille</div>
+      <div><span class="step-num">2</span> Choose your frame type (Vollrand/Halbrand/Randlos)</div>
+      <div><span class="step-num">3</span> Pick coating — Härtung (scratch resistance) is standard</div>
+      <div><span class="step-num">4</span> Enter your values: R: Sph -1.25 / Cyl -0.75 / Axis 130° · L: Sph -0.50 / Cyl -0.75 / Axis 40°</div>
+      <div><span class="step-num">5</span> For PD: choose "aus eingesendeter Brille übernehmen" (read from sent glasses)</div>
+      <div><span class="step-num">6</span> Order → get DHL label → mail your frame → get it back in ~5 days</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Local in Wedding: Robin Look (walk-in)</h3>
+    <span class="tag tag-green">From €65 complete · Essilor lenses · Scratch resistance + anti-reflective included</span>
+
+    <div class="links">
+      <a href="https://www.robinlook.de/blogs/online-services/wir-verglasen-ihre-eigene-fassung" target="_blank">
+        <span><span class="shop-name">Robin Look — Reglazing Info</span></span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://www.robinlook.de/blogs/standorte/berlin-wedding" target="_blank">
+        <span><span class="shop-name">Robin Look Wedding</span> — Badstr. 4, 13357 Berlin</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="note">
+      <strong>Walk-in option:</strong> Mon–Sat 10–19h · Badstraße 4 (Gesundbrunnen Center) · Tel: 030 432 05 770<br>
+      Bring your frame + prescription. Free eye test available. Same-day or few-day turnaround.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p style="font-size:0.78rem;color:var(--text-dim);text-align:center;padding:8px 0;">
+    Prices are approximate and may vary. Generated Feb 2026. Always double-check values before ordering.
+  </p>
+
+</div>
+</body>
+</html>
