@@ -1,16 +1,16 @@
 [
   {
-    "slug": "2026-03-04-color-playground",
-    "title": "CSS Gradient Playground",
-    "description": "Pick two colors and a direction to generate a live CSS gradient preview with copyable code.",
-    "date": "2026-03-04",
-    "path": "artifacts/2026-03-04-color-playground/index.html"
-  },
-  {
     "slug": "2026-03-04-berlin-sessions",
     "title": "Berlin Sessions — Open Jams & Mics",
     "description": "Weekly calendar and map of recurring open jams, open mics, and live sessions happening across Berlin.",
     "date": "2026-03-04",
     "path": "artifacts/2026-03-04-berlin-sessions/index.html"
+  },
+  {
+    "slug": "2026-03-04-vision-order-guide",
+    "title": "Ido's Vision Order Guide",
+    "description": "Prescription reference card with direct order links for Biofinity Toric contact lenses and glasses reglazing services in Germany.",
+    "date": "2026-03-04",
+    "path": "artifacts/2026-03-04-vision-order-guide/index.html"
   }
 ]
