@@ -12,5 +12,12 @@
     "description": "Weekly calendar and map of recurring open jams, open mics, and live sessions happening across Berlin.",
     "date": "2026-03-04",
     "path": "artifacts/2026-03-04-berlin-sessions/index.html"
+  },
+  {
+    "slug": "2026-03-05-berlin-dances",
+    "title": "Berlin Dances — Weekly Social Dances",
+    "description": "Weekly calendar and map of recurring tango milongas, salsa nights, and social dance events across Berlin.",
+    "date": "2026-03-05",
+    "path": "artifacts/2026-03-05-berlin-dances/index.html"
   }
 ]
